@@ -3,6 +3,7 @@
     "target": "ESNext",
     "moduleResolution": "node",
     "baseUrl": ".",
+    "esModuleInterop": true,
     "paths": {
       "#config": [".config.ts"],
       "@C/*": ["src/components/*"]

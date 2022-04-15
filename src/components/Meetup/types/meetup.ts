@@ -1,6 +1,8 @@
 import * as Response from "./response";
 import { DateTime } from "luxon";
-import { ICalendar, GoogleCalendar, CalendarOptions } from "datebook";
+import type { CalendarOptions } from "datebook";
+import datebook from "datebook";
+const { GoogleCalendar, ICalendar } = datebook;
 
 export type MeetupImageType = "jpg" | "png" | "webp";
 
