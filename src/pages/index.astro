@@ -3,6 +3,10 @@
 import { Sprite } from 'astro-icon';
 import Meetup from '@C/Meetup';
 import Socials from '@C/Socials';
+// @ts-ignore
+import About from '../content/about.md?content';
+// @ts-ignore
+import Membership from '../content/membership.md?content';
 ---
 <html lang="en">
 <head>
@@ -21,6 +25,8 @@ import Socials from '@C/Socials';
 	<main class="w-full h-screen flex flex-col justify-center">
 		<div class="p-2 overflow-y-scroll flex-grow">
 			<Socials />
+			<About />
+			<Membership class="markdown" />
 		</div>
 	</main>
 </Sprite.Provider>

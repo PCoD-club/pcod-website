@@ -1,6 +1,7 @@
 export default {
   meetup_gid: "23798818",
   timezone: "America/Denver",
+  membership_url: "/join",
   icons: {
     meetup: "la:meetup",
     calendar_add: "ph:calendar-plus-fill",

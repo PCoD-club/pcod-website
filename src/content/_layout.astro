@@ -1,0 +1,27 @@
+---
+import { Markdown } from 'astro/components';
+const { content } = Astro.props
+---
+
+<style>
+h1 {
+  @apply font-display text-xl underline;
+}
+h2 {
+  @apply font-display text-lg;
+}
+
+ul {
+  @apply list-disc;
+  li {
+    @apply ml-6;
+  }
+}
+
+a:not(h1 a, h2 a, h3 a) {
+  @apply underline;
+  color: rgb(89 131 181);
+}
+</style>
+
+<Markdown content={content.astro.source} />
