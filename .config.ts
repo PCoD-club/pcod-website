@@ -7,4 +7,24 @@ export default {
     online_event: "ph:broadcast-bold",
     map_marker: "fontisto:map-marker-alt",
   },
+  socials: [
+    {
+      service: "meetup",
+      username: "Psychedelic Club of Denver",
+      url: "https://www.meetup.com/Psychedelic-Club-of-Denver/",
+      icon: "cib:meetup",
+    },
+    {
+      service: "facebook",
+      username: "Psychedelic Club of Denver",
+      url: "https://www.facebook.com/DenverPsychedelicClub",
+      icon: "cib:facebook",
+    },
+    {
+      service: "instagram",
+      username: "@denverpsychedelicclub",
+      url: "https://www.instagram.com/denverpsychedelicclub/",
+      icon: "cib:instagram",
+    },
+  ],
 };
