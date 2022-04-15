@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node"
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "#config": [".config.ts"],
+      "@C/*": ["src/components/*"]
+    }
   }
 }

@@ -1,0 +1,40 @@
+---
+import requestMeetupGroup from './request';
+import MeetupGroup from './types/meetup';
+import MeetupEvent from './event.astro';
+import { Sprite } from 'astro-icon';
+import config from '#config';
+
+
+const { icons } = config;
+
+const group = new MeetupGroup((await requestMeetupGroup()).data.group);
+---
+
+<div class="bg-slate-900 text-white rounded-lg p-4 max-w-lg">
+  <a
+    href={group.url}
+    class="grid grid-flow-row grid-cols-12 gap-x-2 md:gap-x-4 auto-rows-fr"
+  >
+    <div
+      style={`background-image: url(${group.logo.url({ size: [240, 240] })})`}
+      class="col-span-2 md:col-span-3 row-span-2 md:row-span-5 bg-left md:bg-top bg-contain bg-no-repeat"
+    />
+    <div
+      class="col-span-10 md:col-span-9 text-lg font-semibold font-display flex flex-row justify-between items-center"
+    >
+      <span class="flex-grow">{ group.name }</span>
+      <Sprite
+        name={icons.meetup}
+        class="text-gray-400 h-7 w-7"
+      />
+    </div>
+    <div class="col-span-12 md:col-span-9 row-span-4">
+      <div class="text-gray-400 line-clamp-4">
+        { group.description }
+      </div>
+    </div>
+  </a>
+  <hr class="border-gray-700" />
+  {group.events.map(event => <MeetupEvent event={event} />)}
+</div>

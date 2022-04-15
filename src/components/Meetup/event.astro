@@ -1,0 +1,54 @@
+---
+import { MeetupEvent, MeetupEventType } from './types/meetup';
+import { DateTime } from "luxon";
+import { Sprite } from 'astro-icon';
+import config from '#config';
+
+export interface Props {
+  event: MeetupEvent
+}
+const { event } = Astro.props as Props;
+
+const { icons } = config;
+
+const cleanDescription = event.description.split("\n\n").filter((p) => !p.match(/^\*|www\./g)).join("\n\n");
+---
+
+<div class="bg-slate-700 rounded-md mt-4 p-2 space-y-2 touch:space-y-4">
+  <a href={event.url.href} class="grid grid-cols-8 gap-x-2 gap-y-1">
+    <div
+      class="col-span-1 row-span-3 bg-top bg-contain bg-no-repeat"
+      style={`background-image: url(${ event.image.url({size: [120, 120]}) })`}
+    />
+    <div class="col-span-7 font-display min-h-[2.5rem] md:min-h-0">
+      { event.title }
+    </div>
+    <div class="col-span-8 md:col-span-7 row-span-2 text-sm text-gray-400 italic break-words line-clamp-3">
+      { cleanDescription }
+    </div>
+  </a>
+
+  { event.type === MeetupEventType.ONLINE ? (
+      <div>
+        <Sprite class="h-5 w-5 inline" name={icons.online_event} />
+        <span class="ml-1">Online Event</span>
+      </div>
+    ) : (
+      <a class="block" href={event.venue.gmaps.href}>
+        <Sprite class="h-5 w-5 inline" name={icons.map_marker} />
+        <span class="ml-1">{ event.venue.name }, { event.venue.address }</span>
+      </a>
+    )
+  }
+
+  <a class="block" href={`data:text/calendar;charset=utf-8,${encodeURIComponent(event.ical.render())}`} download={`${event.id.split('!')[0]}.ics`} >
+    <Sprite class="h-5 w-5 inline" name={icons.calendar_add} />
+    <span class="ml-1">{
+      event.datetime.toLocaleString({
+        ...DateTime.DATETIME_FULL,
+        weekday: "short",
+        timeZoneName: undefined,
+      })
+    }</span>
+  </a>
+</div>
