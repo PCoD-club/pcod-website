@@ -1,11 +1,8 @@
 ---
 layout: ./_layout.astro
-setup: |
-  import config from '#config';
-  const { membership_url } = config;
 ---
 
-# [Become a Psychedelic Club of Denver member!]({membership_url})
+# [Become a Psychedelic Club of Denver member!](/join)
 
 Our newly launched membership program is a great way to give back to the club, be more involved in the community, and get even more great benefits from the club! A few of our membership perks:
 
@@ -34,7 +31,7 @@ While we suggest a monthly contribution of **$15/month**, we want membership to 
 
 We accept two routes of becoming a member:
 
-- Donate online to our **[GivingFuel page]({membership_url})** (preferred)
+- Donate online to our **[GivingFuel page](/join)** (preferred)
 - We also accept membership dues in cash at in-person events.
 
 Once you're a member, we'll send you an email outlining all your benefits along with an invite to our private Discord server. We'll occasionally offer members volunterr opportunities to temporarily waive their dues for a month.
