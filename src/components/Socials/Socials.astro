@@ -1,0 +1,10 @@
+---
+import SocialsLink from './SocialsLink.astro';
+import config from '#config';
+const { socials } = config;
+---
+
+
+<div>
+  { socials.map(s => <SocialsLink {...s} />) }
+</div>
