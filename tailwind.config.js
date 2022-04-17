@@ -16,7 +16,8 @@ module.exports = {
         sans: ["Quicksand", ...defaultTheme.fontFamily.sans],
       },
       screens: {
-        touch: { raw: "(hover: none), (pointer: coarse)" },
+        touch: { raw: "(pointer: coarse)" },
+        notouch: { raw: "(pointer: fine)" },
       },
     },
     fontFamily: {
