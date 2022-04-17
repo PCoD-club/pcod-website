@@ -1,3 +1,5 @@
+console.log(process.version);
+
 import { Handler } from "@netlify/functions";
 import { StatusCodes } from "http-status-codes";
 import { createHmac } from "crypto";
