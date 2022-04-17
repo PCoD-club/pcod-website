@@ -5,5 +5,5 @@
 [[plugins]]
   package = "netlify-plugin-subfont"
 
-[[plugins]]
+[[context.production.plugins]]
   package = "@netlify/plugin-lighthouse"
