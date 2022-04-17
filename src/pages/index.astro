@@ -1,27 +1,15 @@
 ---
 // Style Imports
-import { Sprite } from 'astro-icon';
 import Meetup from '@C/Meetup';
 import Socials from '@C/Socials';
 // @ts-ignore
 import About from '../content/about.md?content';
 // @ts-ignore
 import Membership from '../content/membership.md?content';
+
+import BaseLayout from '@L/base.astro';
 ---
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>test</title>
-
-	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet"> 
-</head>
-<body class="font-sans">
-<Sprite.Provider>
+<BaseLayout>
 	<main class="w-full h-screen flex flex-col justify-center">
 		<h1 class="font-display text-2xl bg-slate-300 px-4 py-3">
 			<img class="h-8 w-8 inline-block mr-2 align-bottom" src="/assets/logo.png" />
@@ -37,6 +25,4 @@ import Membership from '../content/membership.md?content';
 			<Meetup />
 		</div>
 	</main>
-</Sprite.Provider>
-</body>
-</html>
+</BaseLayout>

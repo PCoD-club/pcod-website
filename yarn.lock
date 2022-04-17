@@ -570,6 +570,11 @@ astro-icon@^0.7.1:
     resolve-pkg "^2.0.0"
     svgo "^2.8.0"
 
+astro-seo@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/astro-seo/-/astro-seo-0.5.0.tgz#4e2a86f09fb248480e4213e6d8d828de76f4c8c3"
+  integrity sha512-2J1QBtoDIKb1bTCc+vpT0c73oXSFh/WZ+cwSGsQ5SCdNLDpMp/qefeeQkCcsqEVICLsyYVgt5VwxSmopHaq55A==
+
 astro@^1.0.0-beta.10:
   version "1.0.0-beta.10"
   resolved "https://registry.yarnpkg.com/astro/-/astro-1.0.0-beta.10.tgz#6b3458e4c5bda4cf7fe59f14ab768178f522851d"
