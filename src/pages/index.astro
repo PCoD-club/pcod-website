@@ -23,10 +23,18 @@ import Membership from '../content/membership.md?content';
 <body class="font-sans">
 <Sprite.Provider>
 	<main class="w-full h-screen flex flex-col justify-center">
+		<h1 class="font-display text-2xl bg-slate-300 px-4 py-3">
+			<img class="h-8 w-8 inline-block mr-2 align-bottom" src="/assets/logo.png" />
+			Psychedelic Club of Denver
+		</h1>
 		<div class="p-2 overflow-y-scroll flex-grow">
 			<Socials />
+			<hr class="border-black my-2" />
 			<About />
+			<hr class="border-black my-2" />
 			<Membership class="markdown" />
+			<hr class="border-black my-2" />
+			<Meetup />
 		</div>
 	</main>
 </Sprite.Provider>
