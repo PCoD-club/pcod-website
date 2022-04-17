@@ -1,16 +1,15 @@
 import { Handler } from "@netlify/functions";
 import { StatusCodes } from "http-status-codes";
 import { createHmac } from "crypto";
-import { Client } from "discord.js";
 import nodemailer from "nodemailer";
 import striptags from "striptags";
+import axios from "axios";
 import config from "./config";
 
 const {
   WEBCONNEX_SECRET,
   API_KEY,
   DISCORD_TOKEN,
-  DISCORD_GUILD_ID,
   DISCORD_INVITECHANNEL_ID,
   SMTP_EMAIL,
   SMTP_PASSWORD,
@@ -31,18 +30,28 @@ function verifyWebconnexSignature(body: string, received: string): boolean {
   return signature == received;
 }
 
-async function createDiscordInvite(reqData: any): Promise<string> {
-  const discord = new Client({ intents: [] });
-  await discord.login(DISCORD_TOKEN);
-  const guild = await discord.guilds.fetch(DISCORD_GUILD_ID);
-  const invite = await guild.invites.create(DISCORD_INVITECHANNEL_ID, {
-    maxAge: 7 * 24 * 3600,
-    maxUses: 1,
-    unique: true,
-    reason: config.inviteReason(reqData),
-  });
-  discord.destroy();
-  return invite.url;
+async function createDiscordInvite(reqData: any) {
+  const resp = await axios.post(
+    `https://discord.com/api/v9/channels/${DISCORD_INVITECHANNEL_ID}/invites`,
+    {
+      max_age: 604800,
+      max_uses: 1,
+      temporary: false,
+      unique: true,
+    },
+    {
+      headers: {
+        Authorization: `Bot ${DISCORD_TOKEN}`,
+        "X-Audit-Log-Reason": config.inviteReason(reqData),
+      },
+    }
+  );
+
+  if (resp.status != StatusCodes.OK) {
+    throw new Error(`Discord response code ${resp.status}: ${resp.data}`);
+  }
+
+  return `https://discord.gg/${resp.data.code}`;
 }
 
 function sendEmail(body: string, toAddr: string) {
