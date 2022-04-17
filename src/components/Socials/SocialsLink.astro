@@ -10,7 +10,7 @@ export interface Props {
 const social = Astro.props as Props;
 ---
 
-<a href={social.url} class="text-lg block touch:my-1">
+<a href={social.url} class="text-lg block touch:py-2">
   <Sprite class="inline h-5 w-5" name={social.icon} />
   <span class="ml-2 align-middle">{ social.username }</span>
 </a>

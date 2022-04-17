@@ -1,3 +1,9 @@
 [[redirects]]
   from = "/join"
   to = "https://psychedelicclubofdenver.givingfuel.com/monthly-membership"
+
+[[plugins]]
+  package = "netlify-plugin-subfont"
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"

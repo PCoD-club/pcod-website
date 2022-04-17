@@ -7,7 +7,8 @@
     "paths": {
       "#config": [".config.ts"],
       "@/*": ["src/*,"],
-      "@C/*": ["src/components/*"]
+      "@C/*": ["src/components/*"],
+      "@L/*": ["src/layouts/*"]
     }
   }
 }
