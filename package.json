@@ -19,5 +19,9 @@
     "datebook": "^7.0.8",
     "luxon": "^2.3.1",
     "netlify-plugin-subfont": "^6.0.0"
+  },
+  "dependencies": {
+    "@netlify/functions": "^1.0.0",
+    "discord.js": "^13.6.0"
   }
 }
