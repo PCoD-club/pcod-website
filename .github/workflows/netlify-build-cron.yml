@@ -1,0 +1,16 @@
+name: Netlify Daily Build
+
+on:
+  schedule:
+    # 9:55 MDT every day
+    - cron: "55 15 * * *"
+  workflow_dispatch:
+
+jobs:
+  netlify_rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Webhook Action
+        uses: joelwmale/webhook-action@2.1.0
+        with:
+          url: ${{ secrets.NETLIFY_BUILDHOOK_URL }}
