@@ -68,7 +68,7 @@ export const handler: Handler = async (event, context) => {
   if (
     !verifyWebconnexSignature(
       event.body,
-      event.headers["X-Webconnex-Signature"]
+      event.headers["x-webconnex-signature"]
     )
   ) {
     return {
@@ -94,11 +94,10 @@ export const handler: Handler = async (event, context) => {
   const emailBody = config.emailContent(payload.data, invite);
 
   const emailResp = await sendEmail(emailBody, payload.data.billing.email);
-  if (emailResp.rejected) {
-    console.error(`Email rejected: ${emailResp.response}`);
+  if (emailResp.rejected.length > 0) {
     return {
       statusCode: StatusCodes.INTERNAL_SERVER_ERROR,
-      body: "Could not send email",
+      body: `Could not send email: ${emailResp}`,
     };
   }
 
