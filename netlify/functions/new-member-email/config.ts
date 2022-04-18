@@ -16,7 +16,7 @@ export default {
       <li>Freeform conversation among members</li>
       <li>Sharing Psychedelic news, articles, art, memes, etc.</li>
       <li>Announcements for upcoming club events, unofficial hangouts, volunteer opportunities, and unaffiliated psychedelic events</li>
-      <li>Exercize your voting power in the club with occasional polls</li>
+      <li>Exercise your voting power in the club with occasional polls</li>
       <li>However else you want to use it, this is <b>your</b> community!</li>
     </ul>
     (If you're concerned about others seeing that you're a member, don't worry. Your Discord memberships are private, so nobody outside of other club members will see that you're in this community.)
@@ -32,5 +32,6 @@ export default {
     Once you're logged into the server, please read through the rules (they should be shown when you first join). Then feel free to introduce yourself in #introductions if you'd like and take a look around!<br/>
     We also have a master list of all our upcoming events in the 'Events' section at the top of the channel list. Included in that list should be a members-only potluck that we hold on the last Thursday of each month at 7PM at 700 Kalamath St; this is an awesome opportunity to get to know the members and to get more involved in the club. Thanks again for joining the Psychedelic Club of Denver, and we're so excited to get to know you!
     <br/><br/>
-    <i>- Kess, Katie, Mat, and Zak</i>`,
+    <i>- Kess, Katie, Mat, and Zak</i><br/>
+    <img src="https://pcodenver.com/assets/logo64.png" width="64px" height="64px" />`,
 };
