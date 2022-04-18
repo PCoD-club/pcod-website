@@ -30,7 +30,7 @@ export default {
     )}" style="color: #B300FF;">${sms_number}</a>, and we'll help get you set up.
     <br/><br/>
     Once you're logged into the server, please read through the rules (they should be shown when you first join). Then feel free to introduce yourself in #introductions if you'd like and take a look around!<br/>
-    We also have a master list of all our upcoming events in the 'Events' section at the top of the channel list. Included in that list should be a members-only potluck that we hold on the last Thursday of each month at 7PM at 700 Kalamath St; this is an awesome opportunity to get to know the members and to get more involved in the club. Thanks again for joining the Psychedelic Club of Denver, and we're so excited to get to know you!
+    We also have a master list of all our upcoming events in the 'Events' section at the top of the channel list. Included in that list should be a members-only social that we hold on the last Thursday of each month at 7PM at 700 Kalamath St; this is an awesome opportunity to get to know the members and to get more involved in the club. Thanks again for joining the Psychedelic Club of Denver, and we're so excited to get to know you!
     <br/><br/>
     <i>- Kess, Katie, Mat, and Zak</i>
     <br/><br/>
