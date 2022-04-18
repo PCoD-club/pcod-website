@@ -5,6 +5,7 @@ export default {
   meetup_gid: "23798818",
   timezone: "America/Denver",
   membership_url: "/join",
+  sms_number: "(719) 881-0768",
   icons: {
     meetup: "la:meetup",
     calendar_add: "ph:calendar-plus-fill",
