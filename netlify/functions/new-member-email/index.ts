@@ -101,5 +101,12 @@ export const handler: Handler = async (event, context) => {
     };
   }
 
-  return { statusCode: StatusCodes.NO_CONTENT };
+  return {
+    statusCode: StatusCodes.OK,
+    body: JSON.stringify({
+      invite,
+      emailBody,
+      emailResp,
+    }),
+  };
 };
