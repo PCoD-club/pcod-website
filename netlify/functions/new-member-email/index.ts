@@ -54,11 +54,11 @@ async function createDiscordInvite(reqData: any) {
   return `https://discord.gg/${resp.data.code}`;
 }
 
-function sendEmail(body: string, toAddr: string) {
+function sendEmail(body: string, toAddr: string, subject: string = config.emailSubject) {
   return smtp.sendMail({
     from: `"Psychedelic Club of Denver" <${SMTP_EMAIL}>`,
     to: toAddr,
-    subject: config.emailSubject,
+    subject: subject,
     html: body,
     text: striptags(body),
   });
@@ -90,14 +90,25 @@ export const handler: Handler = async (event, context) => {
     return { statusCode: StatusCodes.UNAUTHORIZED, body: "Invalid API Key" };
   }
 
-  const invite = await createDiscordInvite(payload.data);
-  const emailBody = config.emailContent(payload.data, invite);
+  const reqData = payload.data;
+  const invite = await createDiscordInvite(reqData);
+  const emailBody = config.emailContent(reqData, invite);
 
-  const emailResp = await sendEmail(emailBody, payload.data.billing.email);
+  const emailTo = `"${reqData.billing.name.first} ${reqData.billing.name.last}" <${reqData.billing.email}>`
+  const emailResp = await sendEmail(emailBody, emailTo);
   if (emailResp.rejected.length > 0) {
     return {
       statusCode: StatusCodes.INTERNAL_SERVER_ERROR,
       body: `Could not send email: ${emailResp}`,
+    };
+  }
+
+  const loopbackBody = config.loopbackContent(reqData);
+  const loopbackResp = await sendEmail(loopbackBody, config.loopbackTo, config.loopbackSubject);
+  if (loopbackResp.rejected.length > 0) {
+    return {
+      statusCode: StatusCodes.INTERNAL_SERVER_ERROR,
+      body: `Could not send loopback email: ${loopbackResp}`,
     };
   }
 

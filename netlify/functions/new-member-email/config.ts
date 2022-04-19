@@ -35,4 +35,24 @@ export default {
     <i>- Kess, Katie, Mat, and Zak</i>
     <br/><br/>
     <img src="https://pcodenver.com/assets/logo64.png" width="48px" height="48px" alt="Psychedelic Club of Denver Logo" />`,
+  loopbackSubject: "New Member Notification",
+  loopbackTo: "\"Psychedelic Club of Denver Membership\" <membership@pcodenver.com>",
+  loopbackContent: (reqData: any) =>
+    endent`This is an automated email to notify you of a new Psychedelic Club member registration.
+    <br/><br/>
+    <b>Personal & Contact Info</b>
+    Name: <b>${reqData.billing.name.first} ${reqData.billing.name.last}</b><br/>
+    Email: <a href="mailto:${reqData.billing.email}">${reqData.billing.email}</a><br/>
+    Billing Address: ${reqData.billing.address}, ${reqData.billing.city} ${reqData.billing.state} ${reqData.billing.postalCode}<br/>
+    Phone Number: <a href="sms://${reqData.billing.phone}">${reqData.billing.phone}</a>
+    <br/><br/>
+    <b>Registration Details</b>
+    Registration Timestamp (UTC): ${reqData.registrationTimestamp}<br/>
+    Amount Paid: ${reqData.currency} ${reqData.total}<br/>
+    Order Number: ${reqData.orderNumber}<br/>
+    Registrants: ${endent.pretty(reqData.registrants)}
+    <br/><br/>
+    - This email created and delivered by friendly neighborhood machine elves
+    <br/><br/>
+    <img src="https://pcodenver.com/assets/logo64.png" width="48px" height="48px" alt="Psychedelic Club of Denver Logo" />`
 };
