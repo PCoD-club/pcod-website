@@ -30,9 +30,29 @@ export default {
     )}" style="color: #B300FF;">${sms_number}</a>, and we'll help get you set up.
     <br/><br/>
     Once you're logged into the server, please read through the rules (they should be shown when you first join). Then feel free to introduce yourself in #introductions if you'd like and take a look around!<br/>
-    We also have a master list of all our upcoming events in the 'Events' section at the top of the channel list. Included in that list should be a members-only potluck that we hold on the last Thursday of each month at 7PM at 700 Kalamath St; this is an awesome opportunity to get to know the members and to get more involved in the club. Thanks again for joining the Psychedelic Club of Denver, and we're so excited to get to know you!
+    We also have a master list of all our upcoming events in the 'Events' section at the top of the channel list. Included in that list should be a members-only social that we hold on the last Thursday of each month at 7PM at 700 Kalamath St; this is an awesome opportunity to get to know the members and to get more involved in the club. Thanks again for joining the Psychedelic Club of Denver, and we're so excited to get to know you!
     <br/><br/>
     <i>- Kess, Katie, Mat, and Zak</i>
     <br/><br/>
     <img src="https://pcodenver.com/assets/logo64.png" width="48px" height="48px" alt="Psychedelic Club of Denver Logo" />`,
+  loopbackSubject: "New Member Notification",
+  loopbackTo: "\"Psychedelic Club of Denver Membership\" <membership@pcodenver.com>",
+  loopbackContent: (reqData: any) =>
+    endent`This is an automated email to notify you of a new Psychedelic Club member registration.
+    <br/><br/>
+    <b>Personal & Contact Info</b>
+    Name: <b>${reqData.billing.name.first} ${reqData.billing.name.last}</b><br/>
+    Email: <a href="mailto:${reqData.billing.email}">${reqData.billing.email}</a><br/>
+    Billing Address: ${reqData.billing.address}, ${reqData.billing.city} ${reqData.billing.state} ${reqData.billing.postalCode}<br/>
+    Phone Number: <a href="sms://${reqData.billing.phone}">${reqData.billing.phone}</a>
+    <br/><br/>
+    <b>Registration Details</b>
+    Registration Timestamp (UTC): ${reqData.registrationTimestamp}<br/>
+    Amount Paid: ${reqData.currency} ${reqData.total}<br/>
+    Order Number: ${reqData.orderNumber}<br/>
+    Registrants: ${endent.pretty(reqData.registrants)}
+    <br/><br/>
+    - This email created and delivered by friendly neighborhood machine elves
+    <br/><br/>
+    <img src="https://pcodenver.com/assets/logo64.png" width="48px" height="48px" alt="Psychedelic Club of Denver Logo" />`
 };
