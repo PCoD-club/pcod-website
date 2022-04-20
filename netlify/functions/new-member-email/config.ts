@@ -40,17 +40,17 @@ export default {
   loopbackContent: (reqData: any) =>
     endent`This is an automated email to notify you of a new Psychedelic Club member registration.
     <br/><br/>
-    <b>Personal & Contact Info</b>
+    <b>Personal & Contact Info</b><br/>
     Name: <b>${reqData.billing.name.first} ${reqData.billing.name.last}</b><br/>
     Email: <a href="mailto:${reqData.billing.email}">${reqData.billing.email}</a><br/>
-    Billing Address: ${reqData.billing.address}, ${reqData.billing.city} ${reqData.billing.state} ${reqData.billing.postalCode}<br/>
+    Billing Address: ${reqData.billing.address.street1}, ${reqData.billing.address.city} ${reqData.billing.address.state} ${reqData.billing.address.postalCode}<br/>
     Phone Number: <a href="sms://${reqData.billing.phone}">${reqData.billing.phone}</a>
     <br/><br/>
-    <b>Registration Details</b>
+    <b>Registration Details</b><br/>
     Registration Timestamp (UTC): ${reqData.registrationTimestamp}<br/>
-    Amount Paid: ${reqData.currency} ${reqData.total}<br/>
+    Amount Paid: $${reqData.registrants[0].data[0].repeater[0].amount.value}<br/>
     Order Number: ${reqData.orderNumber}<br/>
-    Registrants: ${endent.pretty(reqData.registrants)}
+    Recurring Schedule: ${JSON.stringify(reqData.registrants[0].data[0].repeater[0].schedule || "\"One-time donation\"")}
     <br/><br/>
     - This email created and delivered by friendly neighborhood machine elves
     <br/><br/>
