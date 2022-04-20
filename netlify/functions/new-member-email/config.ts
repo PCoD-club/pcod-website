@@ -50,7 +50,7 @@ export default {
     Registration Timestamp (UTC): ${reqData.registrationTimestamp}<br/>
     Amount Paid: $${reqData.registrants[0].data[0].repeater[0].amount.value}<br/>
     Order Number: ${reqData.orderNumber}<br/>
-    Recurring Schedule: ${JSON.stringify(reqData.registrants[0].data[0].repeater[0].schedule || "\"One-time donation\"")}
+    Recurring Schedule: ${JSON.stringify(reqData.registrants[0].data[0].repeater[0].schedule) || "One-time donation"}
     <br/><br/>
     - This email created and delivered by friendly neighborhood machine elves
     <br/><br/>
