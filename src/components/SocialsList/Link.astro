@@ -6,11 +6,12 @@ export interface Props {
   username: string;
   url: string;
   icon: string;
+  color: string;
 }
 const social = Astro.props as Props;
 ---
 
 <a href={social.url} class="text-lg block touch:py-2">
-  <Sprite class="inline h-5 w-5" name={social.icon} />
+  <Sprite class="inline h-5 w-5" style={`color:${social.color};`} name={social.icon} />
   <span class="ml-2 align-middle">{ social.username }</span>
 </a>
