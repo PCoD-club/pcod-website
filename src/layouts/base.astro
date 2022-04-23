@@ -3,6 +3,8 @@
 import { Sprite } from 'astro-icon';
 import { SEO } from 'astro-seo';
 
+import Navbar from '@C/Navbar';
+
 import config from '#config';
 const { title, description } = config;
 ---
@@ -23,7 +25,12 @@ const { title, description } = config;
 </head>
 <body class="font-sans">
 <Sprite.Provider>
-	<slot />
+	<main class="w-full h-screen flex flex-col justify-center">
+		<Navbar />
+		<div class="p-2 overflow-y-scroll flex-grow">
+			<slot />
+		</div>
+	</main>
 </Sprite.Provider>
 </body>
 </html>
