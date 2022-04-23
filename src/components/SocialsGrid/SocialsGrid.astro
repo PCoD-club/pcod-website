@@ -1,8 +1,24 @@
 ---
 import SocialsLink from './Link.astro';
 import config from '#config';
+
+export interface Props {
+  title?: string | boolean;
+}
+const { title = "Follow Psychedelic Club on social media!" } = Astro.props as Props;
+
 const { socials } = config;
 ---
+
+{ title === false ? (
+    null
+  ) : (
+    <div class="text-xl lg:text-2xl font-display text-center underline pb-3">
+      { title }
+    </div>
+  )
+}
+
 
 
 <div class="flex flex-row flex-wrap justify-around">
