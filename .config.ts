@@ -20,18 +20,21 @@ export default {
       username: "Psychedelic Club of Denver",
       url: "https://www.meetup.com/Psychedelic-Club-of-Denver/",
       icon: "cib:meetup",
+      color: "#E51937"
     },
     {
       service: "facebook",
       username: "Psychedelic Club of Denver",
       url: "https://www.facebook.com/DenverPsychedelicClub",
       icon: "cib:facebook",
+      color: "#3B5998"
     },
     {
       service: "instagram",
       username: "@denverpsychedelicclub",
       url: "https://www.instagram.com/denverpsychedelicclub/",
       icon: "cib:instagram",
+      color: "#C13584"
     },
   ],
   navlinks: [
