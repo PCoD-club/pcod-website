@@ -11,6 +11,8 @@ export default {
     calendar_add: "ph:calendar-plus-fill",
     online_event: "ph:broadcast-bold",
     map_marker: "fontisto:map-marker-alt",
+    openmenu: "ci:hamburger",
+    closemenu: "ci:close-big"
   },
   socials: [
     {
@@ -32,4 +34,9 @@ export default {
       icon: "cib:instagram",
     },
   ],
+  navlinks: [
+    { name: "Home", href: "/" },
+    { name: "Home", href: "/" },
+    { name: "Home", href: "/" },
+  ]
 };
