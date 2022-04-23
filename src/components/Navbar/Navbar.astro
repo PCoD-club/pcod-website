@@ -18,13 +18,13 @@ const { navlinks, icons } = config;
 }
 </style>
 
-<nav id="nav" class="font-display text-2xl bg-slate-300 px-2 py-3 flex flex-row items-center shadow-md">
-    <img class="h-8 w-8 inline-block mr-1" src="/assets/logo64.webp" alt="Psychedelic Club of Denver logo" />
+<nav id="nav" class="font-display text-2xl bg-slate-300 px-2 py-3 flex flex-row items-center shadow-md lg:px-4">
+    <img class="h-8 w-8 inline-block mr-1 lg:mr-2 lg:h-10 lg:w-10 lg:render-sharp" src="/assets/logo64.webp" alt="Psychedelic Club of Denver logo" />
     <span id="nav-title" class="ml-1 flex-grow relative whitespace-nowrap overflow-hidden">
         Psychedelic Club of Denver
         <span id="nav-links" class="w-full left-[100%] bg-slate-300 absolute transition-all overflow-x-auto overflow-y-hidden md:right-0 md:w-auto md:left-auto">
             {navlinks.map(link => (
-                <a class="border-l first:border-l-0 border-slate-500 px-1" href={link.href}>{link.name}</a>
+                <a class="border-l first:border-l-0 border-slate-500 px-1 lg:px-2" href={link.href}>{link.name}</a>
             ))}
         </span>
     </span>
