@@ -11,7 +11,7 @@ export interface Props {
 const social = Astro.props as Props;
 ---
 
-<a href={social.url} class="w-min flex-grow text-center flex flex-col items-center">
+<a href={social.url} class="w-min max-w-max flex-grow text-center flex flex-col items-center">
   <Sprite class="block h-16 w-16 py-1" style={`color:${social.color}`} name={social.icon} />
-  <div>{ social.username }</div>
+  <div class="px-2">{ social.username }</div>
 </a>
