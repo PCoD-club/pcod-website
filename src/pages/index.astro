@@ -2,6 +2,7 @@
 // Style Imports
 import Meetup from '@C/Meetup';
 import SocialsList from '@C/SocialsList';
+import SocialsGrid from '@C/SocialsGrid';
 // @ts-ignore
 import About from '../content/about.md?content';
 // @ts-ignore
@@ -10,6 +11,8 @@ import Membership from '../content/membership.md?content';
 import BaseLayout from '@L/base.astro';
 ---
 <BaseLayout>
+	<SocialsGrid />
+	<hr class="border-black my-2" />
 	<SocialsList />
 	<hr class="border-black my-2" />
 	<About />

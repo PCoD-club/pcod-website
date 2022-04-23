@@ -1,0 +1,10 @@
+---
+import SocialsLink from './Link.astro';
+import config from '#config';
+const { socials } = config;
+---
+
+
+<div class="flex flex-row flex-wrap justify-around">
+  { socials.map(s => <SocialsLink {...s} />) }
+</div>

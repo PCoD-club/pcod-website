@@ -1,0 +1,17 @@
+---
+import { Sprite } from 'astro-icon';
+
+export interface Props {
+  service: string;
+  username: string;
+  url: string;
+  icon: string;
+  color: string;
+}
+const social = Astro.props as Props;
+---
+
+<a href={social.url} class="w-min flex-grow text-center flex flex-col items-center">
+  <Sprite class="block h-16 w-16 py-1" style={`color:${social.color}`} name={social.icon} />
+  <div>{ social.username }</div>
+</a>
