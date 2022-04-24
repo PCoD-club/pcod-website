@@ -11,13 +11,11 @@ import Membership from '../content/membership.md?content';
 import BaseLayout from '@L/base.astro';
 ---
 <BaseLayout>
-	<SocialsGrid />
-	<hr class="border-black my-2" />
-	<SocialsList />
-	<hr class="border-black my-2" />
 	<About />
+	<hr class="border-black my-2" />
+	<Meetup />
 	<hr class="border-black my-2" />
 	<Membership class="markdown" />
 	<hr class="border-black my-2" />
-	<Meetup />
+	<SocialsGrid />
 </BaseLayout>
