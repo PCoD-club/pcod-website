@@ -34,4 +34,4 @@ We accept two routes of becoming a member:
 - Donate online to our **[GivingFuel page](/join)** (preferred)
 - We also accept membership dues in cash at in-person events.
 
-Once you're a member, we'll send you an email outlining all your benefits along with an invite to our private Discord server. We'll occasionally offer members volunterr opportunities to temporarily waive their dues for a month.
+Once you're a member, we'll send you an email outlining all your benefits along with an invite to our private Discord server. We'll occasionally offer members volunteer opportunities to temporarily waive their dues for a month.
