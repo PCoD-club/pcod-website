@@ -11,7 +11,7 @@ export interface Props {
   title?: string;
 }
 
-const { title: siteTitle, description } = config;
+const { title: siteTitle, description, owner } = config;
 const { title: pageTitle } = Astro.props as Props;
 ---
 <html lang="en">
@@ -35,6 +35,10 @@ const { title: pageTitle } = Astro.props as Props;
 		<Navbar />
 		<div class="p-2 overflow-y-scroll flex-grow">
 			<slot />
+			<hr class="border-gray-400 my-2" />
+			<footer class="text-sm text-gray-700">
+				&copy; { new Date().getFullYear() } { owner }. All Rights Reserved
+			</footer>
 		</div>
 	</main>
 </Sprite.Provider>

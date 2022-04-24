@@ -1,5 +1,6 @@
 export default {
   title: "Psychedelic Club of Denver",
+  owner: "Psychedelic Club of Denver",
   description:
     "To raise awareness of the truth about psychedelics and create a safe space for people to integrate their experiences",
   meetup_gid: "23798818",
