@@ -1,0 +1,15 @@
+---
+// Style Imports
+import Meetup from '@C/Meetup';
+import SocialsGrid from '@C/SocialsGrid';
+
+import BaseLayout from '@L/base.astro';
+---
+<BaseLayout>
+	<div class='w-full flex flex-col items-center'>
+		<h1 class="font-display text-2xl pb-2 underline pl-2">Upcoming Events</h1>
+		<Meetup />
+	</div>
+	<hr class="border-black my-2" />
+	<SocialsGrid />
+</BaseLayout>

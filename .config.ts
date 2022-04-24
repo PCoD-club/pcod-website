@@ -39,7 +39,6 @@ export default {
   ],
   navlinks: [
     { name: "Home", href: "/" },
-    { name: "Home", href: "/" },
-    { name: "Home", href: "/" },
+    { name: "Events", href: "/events" }
   ]
 };
