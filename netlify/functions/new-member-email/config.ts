@@ -1,9 +1,11 @@
 import endent from "endent";
 import config from "#config";
-const { sms_number } = config;
+import { DateTime } from "luxon";
+const { sms_number, timezone } = config;
 
 export default {
   smtpServer: { host: "mail.privateemail.com", port: 587, secure: false },
+  emailFrom: "\"Psychedelic Club of Denver\" <membership@pcodenver.com>",
   emailSubject: "Psychedelic Club Discord",
   inviteReason: (reqData: any) =>
     `New member automated invite (GivingFuel order # ${reqData?.orderNumber})`,
@@ -47,10 +49,10 @@ export default {
     Phone Number: <a href="sms://${reqData.billing.phone}">${reqData.billing.phone}</a>
     <br/><br/>
     <b>Registration Details</b><br/>
-    Registration Timestamp (UTC): ${reqData.registrationTimestamp}<br/>
+    Registration Timestamp: ${DateTime.fromISO(reqData.registrationTimestamp, { zone: timezone }).toFormat("ccc, LLL dd, yyyy, hh:mm a")}<br/>
     Amount Paid: $${reqData.registrants[0].data[0].repeater[0].amount.value}<br/>
     Order Number: ${reqData.orderNumber}<br/>
-    Recurring Schedule: ${JSON.stringify(reqData.registrants[0].data[0].repeater[0].schedule) || "One-time donation"}
+    Recurring Schedule: ${JSON.stringify(reqData.registrants[0].data[0].repeater[0].schedule?.value) || "One-time donation"}
     <br/><br/>
     - This email created and delivered by friendly neighborhood machine elves
     <br/><br/>

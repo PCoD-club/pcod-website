@@ -56,7 +56,7 @@ async function createDiscordInvite(reqData: any) {
 
 function sendEmail(body: string, toAddr: string, subject: string = config.emailSubject) {
   return smtp.sendMail({
-    from: `"Psychedelic Club of Denver" <${SMTP_EMAIL}>`,
+    from: config.emailFrom || `"Psychedelic Club of Denver" <${SMTP_EMAIL}>`,
     to: toAddr,
     subject: subject,
     html: body,
