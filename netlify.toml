@@ -2,6 +2,10 @@
   from = "/join"
   to = "https://psychedelicclubofdenver.givingfuel.com/monthly-membership"
 
+[[redirects]]
+  from = "/test"
+  to = "sms://+17198810768"
+
 [[plugins]]
   package = "netlify-plugin-subfont"
 
