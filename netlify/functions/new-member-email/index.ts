@@ -13,6 +13,7 @@ const {
   DISCORD_INVITECHANNEL_ID,
   SMTP_EMAIL,
   SMTP_PASSWORD,
+  SMTP_DKIM,
 } = process.env;
 
 const smtp = nodemailer.createTransport({
@@ -20,6 +21,11 @@ const smtp = nodemailer.createTransport({
   auth: {
     user: SMTP_EMAIL,
     pass: SMTP_PASSWORD,
+  },
+  dkim: {
+    domainName: "pcodenver.com",
+    keySelector: "default",
+    privateKey: SMTP_DKIM
   },
 });
 
