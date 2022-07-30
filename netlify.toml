@@ -6,6 +6,10 @@
   from = "/test"
   to = "sms://+17198810768"
 
+[[redirects]]
+  from = "/shirt"
+  to = "https://pcod.threadless.com/collections/july-2022-limited-edition"
+
 [[plugins]]
   package = "netlify-plugin-subfont"
 
