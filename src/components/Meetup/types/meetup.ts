@@ -81,7 +81,7 @@ export class MeetupEvent {
 
     this.url = new URL(data.eventUrl);
     this.type = MeetupEventType[data.eventType.toUpperCase()];
-    this.venue = new MeetupVenue(data.venue);
+    this.venue = data.venue ? new MeetupVenue(data.venue) : undefined;
     this.datetime = DateTime.fromISO(data.dateTime);
     this.endtime = DateTime.fromISO(data.endTime);
     this.image = new MeetupImage(data.image);
@@ -90,7 +90,7 @@ export class MeetupEvent {
   get calendar(): CalendarOptions {
     return {
       title: this.title,
-      location: this.venue.toString(),
+      location: this.venue?.toString(),
       description: this.description,
       start: this.datetime.toJSDate(),
       end: this.endtime.toJSDate(),
