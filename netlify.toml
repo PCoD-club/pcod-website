@@ -10,6 +10,10 @@
   from = "/shirt"
   to = "https://pcod.threadless.com/collections/july-2022-limited-edition"
 
+[[redirects]]
+  from = "/tix"
+  to = "https://www.eventbrite.com/e/psychedelic-club-of-denver-warehouse-party-tickets-363243891257"
+
 [[plugins]]
   package = "netlify-plugin-subfont"
 
