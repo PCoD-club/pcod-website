@@ -33,12 +33,12 @@ const cleanDescription = event.description.split("\n\n").filter((p) => !p.match(
         <Sprite class="h-5 w-5 inline" name={icons.online_event} />
         <span class="ml-1">Online Event</span>
       </div>
-    ) : (
+    ) : event.venue ? (
       <a class="block" href={event.venue.gmaps.href}>
         <Sprite class="h-5 w-5 inline" name={icons.map_marker} />
         <span class="ml-1">{ event.venue.name }, { event.venue.address }</span>
       </a>
-    )
+    ) : ""
   }
 
   <a class="block" href={`data:text/calendar;charset=utf-8,${encodeURIComponent(event.ical.render())}`} download={`${event.id.split('!')[0]}.ics`} >

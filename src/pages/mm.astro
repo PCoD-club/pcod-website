@@ -1,0 +1,113 @@
+---
+import SocialsGrid from '@C/SocialsGrid';
+import Membership from '../content/membership.md?content';
+
+import { Markdown } from 'astro/components';
+
+import BaseLayout from '@L/base.astro';
+---
+<BaseLayout title="Mindful Marketplace">
+    <style>
+        h1 {
+          @apply font-display text-xl underline;
+        }
+        h2 {
+          @apply font-display text-lg;
+        }
+        hr {
+          @apply my-2;
+        }
+        
+        ul {
+          @apply list-disc;
+          li {
+            @apply ml-6;
+          }
+        }
+        
+        a:not(h1 a, h2 a, h3 a) {
+          @apply underline;
+          color: #b300ff;
+        }
+        </style>
+
+    <Markdown>
+Welcome to the Psychedelic Club of Denver's Mindful Marketplace
+
+# THANK YOU FOR ATTENDING
+We hope to see you back at 8:30 for the [**Warehouse Party**](https://www.eventbrite.com/e/psychedelic-club-of-denver-warehouse-party-tickets-363243891257)!
+
+Music by **The Quiet Room**
+
+## Marketplace Schedule
+
+- **10:00** Yoga Journey with RHYTHMIC METAMORPHOSIS
+- **11:30** Soma and Psyche: A Psychedelic Love Story
+- **1:30** 40 Heroic Doses and a Return to the Cave
+- **2:30** Cake Walk
+- **3:30** Free Beginner Mushroom Cultivation Class
+- **5:00** Silent Auction Ends
+
+
+[**Warehouse Party Tickets**](https://www.eventbrite.com/e/psychedelic-club-of-denver-warehouse-party-tickets-363243891257)
+
+[**Upcoming Events**](https://www.facebook.com/DenverPsychedelicClub/events)
+
+## MEMBERS:
+Please get your free goodie bag at the club table!
+
+---
+
+</Markdown>
+
+<SocialsGrid />
+
+<Markdown>
+
+---
+
+# Breakout Session Descriptions
+
+## 10:00 Yoga Journey with RHYTHMIC METAMORPHOSIS
+
+Rhythmic Metamorphosis is a healing experience, transformational journey, and community built around the core belief that music, movement, and breathwork can heal your body and transforms your life.
+This is a movement practice WITHIN a DJ SET that follows a yoga class arc.
+A live vibrational sound journey and an intentional movement practice, a combination of breathwork, yoga and dance, all synced to sound.
+This union of breath to movement to sound embraces the beautiful interconnectedness of the constant change that we live in. Sound helps you embrace your inner rhythm in this dance we call life.
+This duo uses the portal of sound to guide you through your body and hold you in a safe space to feel, heal, and transform. Get lost in the portal of sound and discover yourself through your body. Express yourself with liberation. Trust the wave of the journey to hold you through it all.
+Show up raw. Leave transformed and ready to integrate this experience into your life.
+
+## 11:30 Soma and Psyche: A Psychedelic Love Story with Nicole Lilly, MA, LMT
+
+How can we maximize our experiences with expanded states through embodied practices? What role does soma have in examining the deep psyche? How can embodiment contribute to a long-term ego disillusion process? What role does eros have in creatively activating a fruitful integration process?
+Join Nicole Lilly, MA, LMT — a Vision Guide, Spiritual-Somatic Therapist, and Experiential Educator — as she takes us through an experiential presentation steeped in soma (body) and psyche (soul).
+
+
+## 1:30 40 Heroic Doses and a Return to the Cave with Travis Tyler Fluck
+
+How does one explain the hyperdimensional visionary space to the uninitiated? The intelligible communication of insights gleaned from this space has become one of the more important skills that Travis Fluck has tasked himself with since his intentional relationship with mushrooms has began. Come hear Travis speak about the 40 heroic and beyond heroic doses that he has taken over the last 3 years since Denver decriminalized mushrooms. This talk will be overlaid by a retelling of Plato's Allegory of the Cave and how it can be applied in the attempt to describe deep psychedelic states to the western mind.
+This meeting is for educational purposes. Attendance is free and open to the public.
+
+## 2:30 Cake Walk with Psychedelic Club of Denver
+
+The last cake walk I can remember was in middle school at a game night fundraiser in 2004. It's about time that changes.
+In order to participate, please bring a cake!! Each cake will count as one entrance to the cake walk. A path of numbered squares will be set in a circle on the ground. The participants will walk around the circle as music plays (similar to musical chairs). When the music stops, a number is drawn at random and called out, and the person standing on that number wins their choice of cake as a prize. The same will repeat until all of the cakes are claimed!
+
+## 3:30 Free Beginner Mushroom Cultivation Class with Mush Love, Charlie
+
+Charlie Petry of "Mush Love, Charlie" will be hosting a beginner mushroom cultivation class open to everyone! Come sit in and learn about getting started in growing every kind of mushroom. This class will focus on the most simple processes and how to quickly go from knowing nothing to having mushrooms grow right in your home. We will discuss pre-sterilized substrate bags, sterile procedures for inoculating these pre-sterilized bags, how mycelium grows and how to care for your bag, harvesting procedures, and how to reset your grow bag for additional mushrooms after the first harvest/"flush".
+
+- 3:30-4:10pm will be a FREE course for everyone
+- 4:10-5pm - $45 LIVE inoculation of provided "All-In-One" Mushroom Grow Bag or free to observe and learn. Those who wish to participate, but do not register will depend on time constraints and supplies available. Joining the class without registering will be $50 so register in advance!
+
+Those who register and pay in advance will receive:
+- (1) 4lb Pre-Sterilized "All-In-One" Mushroom Grow Bag
+- (1) Inflatable/reusable mushroom fruiting/humidity chamber
+- Culture/Spores for inoculating the "All-In-One Bag" after the presentation.
+
+---
+
+    </Markdown>
+
+    <Membership />
+</BaseLayout>

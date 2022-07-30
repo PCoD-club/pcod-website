@@ -4,7 +4,7 @@ layout: ./_layout.astro
 
 # [Become a Psychedelic Club of Denver member!](/join)
 
-Our newly launched membership program is a great way to give back to the club, be more involved in the community, and get even more great benefits from the club! A few of our membership perks:
+Our membership program is a great way to give back to the club, be more involved in the community, and get even more great benefits from the club! A few of our membership perks:
 
 - Access to a private community [Discord](https://discord.com) server
 - Voting power within the organization
@@ -24,8 +24,9 @@ While we suggest a monthly contribution of **$15/month**, we want membership to 
 - 10% Management expenses
 - 10% Membership perks, voted on by PCoD members
 - 20% Quarterly donations to a nonprofit, voted on by PCoD members
-- 30% Harm reduction supplies, i.e. test kits, educational materials, naloxone/Narcan
-- 30% Operating costs, i.e. marketing and event costs
+- 20% Harm reduction supplies, i.e. test kits, educational materials, naloxone/Narcan
+- 20% Operating costs, i.e. event costs
+- 20% Marketing & outreach
 
 ## Ready to become a Psychedelic Club Member?
 
