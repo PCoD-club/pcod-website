@@ -29,7 +29,7 @@ export const handler: Handler = async (event, context) => {
 
     await doc.useServiceAccountAuth({
         client_email: GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        private_key: GOOGLE_PRIVATE_KEY,
+        private_key: GOOGLE_PRIVATE_KEY.replaceAll('\\n', '\n'),
     });
     await doc.loadInfo();
     const sheet = doc.sheetsById[config.sheetId];
