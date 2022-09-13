@@ -1,16 +1,14 @@
 import { Handler } from "@netlify/functions";
 import { StatusCodes } from "http-status-codes";
-import { createHmac } from "crypto";
 import nodemailer from "nodemailer";
 import striptags from "striptags";
 import axios from "axios";
 import config from "./config";
+import verify from "../webconnex";
 
 const {
-  WEBCONNEX_SECRET,
-  API_KEY,
+  NEW_MEMBER_EMAIL_SECRET,
   DISCORD_TOKEN,
-  DISCORD_INVITECHANNEL_ID,
   SMTP_EMAIL,
   SMTP_PASSWORD,
   SMTP_DKIM,
@@ -29,16 +27,9 @@ const smtp = nodemailer.createTransport({
   },
 });
 
-function verifyWebconnexSignature(body: string, received: string): boolean {
-  const hmac = createHmac("sha256", WEBCONNEX_SECRET);
-  hmac.update(body);
-  const signature = hmac.digest("hex");
-  return signature == received;
-}
-
 async function createDiscordInvite(reqData: any) {
   const resp = await axios.post(
-    `https://discord.com/api/v9/channels/${DISCORD_INVITECHANNEL_ID}/invites`,
+    `https://discord.com/api/v9/channels/${config.inviteChannel}/invites`,
     {
       max_age: 604800,
       max_uses: 1,
@@ -71,29 +62,9 @@ function sendEmail(body: string, toAddr: string, subject: string = config.emailS
 }
 
 export const handler: Handler = async (event, context) => {
-  if (
-    !verifyWebconnexSignature(
-      event.body,
-      event.headers["x-webconnex-signature"]
-    )
-  ) {
-    return {
-      statusCode: StatusCodes.UNAUTHORIZED,
-      body: "Invalid or missing X-Webconnex-Signature",
-    };
-  }
-
-  const payload = JSON.parse(event.body);
-
-  const apiKeyReceived = payload?.meta?.appKey;
-  if (!apiKeyReceived) {
-    return {
-      statusCode: StatusCodes.UNPROCESSABLE_ENTITY,
-      body: "Missing API Key",
-    };
-  }
-  if (apiKeyReceived != API_KEY) {
-    return { statusCode: StatusCodes.UNAUTHORIZED, body: "Invalid API Key" };
+  const [payload, webconnexFailure] = verify(event, NEW_MEMBER_EMAIL_SECRET);
+  if (webconnexFailure) {
+    return webconnexFailure;
   }
 
   const reqData = payload.data;
