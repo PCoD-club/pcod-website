@@ -37,7 +37,7 @@ export const handler: Handler = async (event, context) => {
     const transaction = payload.data;
     const values = [
         customerID(transaction),
-        transaction.transactionID,
+        transaction.transactionId,
         transaction.billing.name.last,
         transaction.billing.name.first,
         transaction.billing.email,
@@ -45,7 +45,8 @@ export const handler: Handler = async (event, context) => {
         transaction.subscription.dateLast,
         transaction.subscription.amount,
         transaction.billing.paymentMethod,
-        billingAddress(transaction)
+        billingAddress(transaction),
+        transaction.customerId,
     ];
     const row = await sheet.addRow(values);
 
@@ -53,8 +54,7 @@ export const handler: Handler = async (event, context) => {
         statusCode: StatusCodes.OK,
         body: JSON.stringify({
             index: row.rowIndex,
-            values: values,
-            row: row
+            values: values
         }),
     };
 };
