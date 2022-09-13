@@ -9,7 +9,8 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^0.1.2",
+    "@astrojs/mdx": "^0.11.1",
+    "@astrojs/tailwind": "^1.0.0",
     "@netlify/functions": "^1.0.0",
     "@netlify/plugin-lighthouse": "^3.3.0",
     "@tailwindcss/line-clamp": "^0.3.1",
