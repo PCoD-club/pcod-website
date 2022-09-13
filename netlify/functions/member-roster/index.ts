@@ -19,6 +19,13 @@ function billingAddress(transaction: any): string {
     return [addr.street1, addr.street2, addr.city, addr.state, addr.postalCode].filter(Boolean).join(", ");
 }
 
+function donationAmount(transaction: any): number {
+    return parseFloat(
+        transaction.registrant?.data?.[0]?.repeater?.[0]?.amount?.value
+        ?? transaction.total
+    );
+}
+
 export const handler: Handler = async (event, context) => {
     const [payload, webconnexFailure] = verify(event, MEMBER_ROSTER_SECRET);
     if (webconnexFailure) {
@@ -43,7 +50,7 @@ export const handler: Handler = async (event, context) => {
         transaction.billing.email,
         transaction.subscription.dateCreated.replace("Z", "").replace("T", " "),
         transaction.subscription.dateLast.replace("Z", "").replace("T", " "),
-        transaction.subscription.amount,
+        donationAmount(transaction),
         transaction.billing.paymentMethod,
         billingAddress(transaction),
         transaction.customerId,
