@@ -6,7 +6,6 @@ import config from "./config";
 
 const {
     MEMBER_ROSTER_SECRET,
-    MEMBER_ROSTER_DOCID,
     GOOGLE_SERVICE_ACCOUNT_EMAIL,
     GOOGLE_PRIVATE_KEY
 } = process.env;
@@ -26,7 +25,7 @@ export const handler: Handler = async (event, context) => {
         return webconnexFailure;
     }
 
-    const doc = new GoogleSpreadsheet(MEMBER_ROSTER_DOCID);
+    const doc = new GoogleSpreadsheet(config.docId);
 
     await doc.useServiceAccountAuth({
         client_email: GOOGLE_SERVICE_ACCOUNT_EMAIL,

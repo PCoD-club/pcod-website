@@ -9,7 +9,6 @@ import verify from "../webconnex";
 const {
   NEW_MEMBER_EMAIL_SECRET,
   DISCORD_TOKEN,
-  DISCORD_INVITECHANNEL_ID,
   SMTP_EMAIL,
   SMTP_PASSWORD,
   SMTP_DKIM,
@@ -30,7 +29,7 @@ const smtp = nodemailer.createTransport({
 
 async function createDiscordInvite(reqData: any) {
   const resp = await axios.post(
-    `https://discord.com/api/v9/channels/${DISCORD_INVITECHANNEL_ID}/invites`,
+    `https://discord.com/api/v9/channels/${config.inviteChannel}/invites`,
     {
       max_age: 604800,
       max_uses: 1,

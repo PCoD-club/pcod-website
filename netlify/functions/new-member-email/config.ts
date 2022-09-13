@@ -4,6 +4,8 @@ import { DateTime } from "luxon";
 const { sms_number, timezone } = config;
 
 export default {
+  guildId: "928074679082692608",
+  inviteChannel: "942841663301234699",
   smtpServer: { host: "mail.privateemail.com", port: 587, secure: false },
   emailFrom: "\"Psychedelic Club of Denver Membership\" <membership@pcodenver.com>",
   emailSubject: "Psychedelic Club Discord",
