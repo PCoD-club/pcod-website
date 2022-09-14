@@ -33,5 +33,6 @@ export const handler: Handler = async (event, context) => {
             index: row.rowIndex,
             values: values
         }),
+        headers: { "Content-Type": "application/json" }
     };
 };
