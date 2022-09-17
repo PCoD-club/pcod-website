@@ -21,7 +21,7 @@ function billingAddress(transaction: any): string {
 
 function donationAmount(transaction: any): number {
     return parseFloat(
-        transaction.registrant?.data?.[0]?.repeater?.[0]?.amount?.value
+        (transaction.registrant || transaction.registrants)?.data?.[0]?.repeater?.[0]?.amount?.value
         ?? transaction.total
     );
 }
@@ -48,12 +48,13 @@ export const handler: Handler = async (event, context) => {
         transaction.billing.name.last,
         transaction.billing.name.first,
         transaction.billing.email,
-        transaction.subscription.dateCreated.replace("Z", "").replace("T", " "),
-        transaction.subscription.dateLast.replace("Z", "").replace("T", " "),
+        (transaction.subscription?.dateCreated ?? new Date().toISOString()).replace("Z", "").replace("T", " "),
+        (transaction.subscription?.dateLast ?? new Date().toISOString()).replace("Z", "").replace("T", " "),
         donationAmount(transaction),
         transaction.billing.paymentMethod,
         billingAddress(transaction),
         transaction.customerId,
+        payload.eventType
     ];
     const row = await sheet.addRow(values);
 
