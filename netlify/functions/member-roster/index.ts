@@ -11,7 +11,7 @@ const {
 } = process.env;
 
 function customerID(transaction: any): string {
-    return transaction.billing.email;
+    return transaction.billing.email.toLowerCase();
 }
 
 function billingAddress(transaction: any): string {
