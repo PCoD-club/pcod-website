@@ -52,9 +52,10 @@ export default {
     <br/><br/>
     <b>Registration Details</b><br/>
     Registration Timestamp: ${DateTime.fromISO(reqData.registrationTimestamp, { zone: timezone }).toFormat("ccc, LLL dd, yyyy, hh:mm a")}<br/>
-    Amount Paid: $${reqData.registrants[0].data[0].repeater[0].amount.value}<br/>
+    Amount Paid: $${reqData.registrants[0].data.filter(r => r.type == "donationBox")[0].repeater[0].amount.value}<br/>
     Order Number: ${reqData.orderNumber}<br/>
-    Recurring Schedule: ${JSON.stringify(reqData.registrants[0].data[0].repeater[0].schedule?.value) || "One-time donation"}
+    Recurring Schedule: ${JSON.stringify(reqData.registrants[0].data.filter(r => r.type == "donationBox")[0].repeater[0].schedule?.value) || "One-time donation"}<br/>
+    Referral/Discovery Source: ${reqData.registrants[0].data.filter(r => r.key == "howDidYouHear")[0]?.value || "---"}
     <br/><br/>
     - This email created and delivered by friendly neighborhood machine elves
     <br/><br/>
