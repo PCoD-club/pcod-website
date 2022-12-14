@@ -6,6 +6,10 @@
   from = "/check"
   to = "sms://+17198810768"
 
+[[redirects]]
+  from = "/~1"
+  to = "https://www.eventbrite.com/e/psychedelic-club-of-denver-castle-bash-tickets-485569129337"
+
 [[plugins]]
   package = "netlify-plugin-subfont"
 
