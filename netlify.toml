@@ -10,6 +10,14 @@
   from = "/~1"
   to = "https://www.eventbrite.com/e/psychedelic-club-of-denver-castle-bash-tickets-485569129337"
 
+[[redirects]]
+  from = "/tix"
+  to = "https://www.eventbrite.com/e/psychedelic-club-of-denver-castle-bash-tickets-485569129337"
+
+[[redirects]]
+  from = "/mmsurvey"
+  to = "https://docs.google.com/forms/d/e/1FAIpQLSeWt-yVyD807SnIQX3loVxki_Ikt9fSBPVEuzyftYDVIps_-g/viewform"
+
 [[plugins]]
   package = "netlify-plugin-subfont"
 
