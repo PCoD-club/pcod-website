@@ -18,6 +18,10 @@
   from = "/mmsurvey"
   to = "https://docs.google.com/forms/d/e/1FAIpQLSeWt-yVyD807SnIQX3loVxki_Ikt9fSBPVEuzyftYDVIps_-g/viewform"
 
+[[redirects]]
+  from = "/~2"
+  to = "https://forms.gle/oGEHXQ5fXZovkQRx9"
+
 [[plugins]]
   package = "netlify-plugin-subfont"
 

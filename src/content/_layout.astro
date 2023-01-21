@@ -5,7 +5,7 @@
   <style is:global>
     .markdown {
       h1 {
-        @apply font-display text-xl underline;
+        @apply font-display text-xl underline text-center mt-2;
       }
       h2 {
         @apply font-display text-lg;
@@ -21,6 +21,13 @@
       a:not(h1 a, h2 a, h3 a) {
         @apply underline;
         color: #b300ff;
+      }
+
+      button {
+        @apply bg-primary p-2 text-white rounded-md mx-auto my-2 block;
+        * {
+          @apply text-white !important;
+        }
       }
     }
   </style>
