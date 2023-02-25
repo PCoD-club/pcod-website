@@ -53,7 +53,7 @@ export const handler: Handler = async (event, context) => {
         donationAmount(transaction),
         transaction.billing.paymentMethod,
         billingAddress(transaction),
-        transaction.billing.phone,
+        transaction.billing.phone.replace(/+1\s?/, ""),
         transaction.customerId,
         payload.eventType
     ];
