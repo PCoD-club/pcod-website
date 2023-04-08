@@ -7,20 +7,20 @@
   to = "sms://+17198810768"
 
 [[redirects]]
-  from = "/~1"
-  to = "https://www.eventbrite.com/e/psychedelic-club-of-denver-castle-bash-tickets-485569129337"
-
-[[redirects]]
   from = "/tix"
   to = "https://www.eventbrite.com/e/psychedelic-club-of-denver-castle-bash-tickets-485569129337"
 
 [[redirects]]
-  from = "/mmsurvey"
-  to = "https://docs.google.com/forms/d/e/1FAIpQLSeWt-yVyD807SnIQX3loVxki_Ikt9fSBPVEuzyftYDVIps_-g/viewform"
+  from = "/vendor"
+  to = "https://forms.gle/UtwGaW4VLfTPrir49"
 
 [[redirects]]
-  from = "/~2"
-  to = "https://forms.gle/oGEHXQ5fXZovkQRx9"
+  from = "/vendors"
+  to = "/vendor"
+
+[[redirects]]
+  from = "/vend"
+  to = "/vendor"
 
 [[plugins]]
   package = "netlify-plugin-subfont"
