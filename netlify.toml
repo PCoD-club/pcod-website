@@ -22,6 +22,10 @@
   from = "/vend"
   to = "/vendor"
 
+[[redirects]]
+  from = "/comedy"
+  to = "https://www.eventbrite.com/e/psychedelic-comedy-show-tickets-604046819297"
+
 [[plugins]]
   package = "netlify-plugin-subfont"
 
