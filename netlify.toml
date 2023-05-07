@@ -8,7 +8,7 @@
 
 [[redirects]]
   from = "/tix"
-  to = "https://www.eventbrite.com/e/psychedelic-club-of-denver-castle-bash-tickets-485569129337"
+  to = "https://www.eventbrite.com/e/632157168107/"
 
 [[redirects]]
   from = "/vendor"
@@ -23,8 +23,12 @@
   to = "/vendor"
 
 [[redirects]]
-  from = "/comedy"
-  to = "https://www.eventbrite.com/e/psychedelic-comedy-show-tickets-604046819297"
+  from = "/bash"
+  to = "/tix"
+
+[[redirects]]
+  from = "/party"
+  to = "/tix"
 
 [[plugins]]
   package = "netlify-plugin-subfont"
