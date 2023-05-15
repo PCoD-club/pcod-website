@@ -11,6 +11,10 @@
   to = "https://www.eventbrite.com/e/632157168107/"
 
 [[redirects]]
+  from = "/tickets"
+  to = "https://www.eventbrite.com/e/632157168107/"
+
+[[redirects]]
   from = "/vendor"
   to = "https://forms.gle/UtwGaW4VLfTPrir49"
 
@@ -23,12 +27,12 @@
   to = "/vendor"
 
 [[redirects]]
-  from = "/bash"
-  to = "/tix"
+  from = "/party"
+  to = "https://www.eventbrite.com/e/632157168107/"
 
 [[redirects]]
-  from = "/party"
-  to = "/tix"
+  from = "/bash"
+  to = "https://www.eventbrite.com/e/632157168107/"
 
 [[plugins]]
   package = "netlify-plugin-subfont"
