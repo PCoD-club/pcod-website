@@ -1,0 +1,14 @@
+---
+import redirects from "../../redirects.json";
+
+export function getStaticPaths() {
+    return Object.entries(redirects).map(([key, link]) => ({
+        params: { page: key },
+    }));
+}
+
+const { page } = Astro.params;
+const link = redirects[page];
+---
+
+<meta http-equiv="Refresh" content=`0; url='${link}'` />

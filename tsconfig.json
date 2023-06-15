@@ -5,10 +5,18 @@
     "baseUrl": ".",
     "esModuleInterop": true,
     "paths": {
-      "#config": [".config.ts"],
-      "@/*": ["src/*,"],
-      "@C/*": ["src/components/*"],
-      "@L/*": ["src/layouts/*"]
+      "#config": [
+        ".config.ts"
+      ],
+      "@/*": [
+        "src/*,"
+      ],
+      "@C/*": [
+        "src/components/*"
+      ],
+      "@L/*": [
+        "src/layouts/*"
+      ]
     }
   }
 }
