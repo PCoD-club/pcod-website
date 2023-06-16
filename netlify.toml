@@ -34,6 +34,10 @@
   from = "/bash"
   to = "https://www.eventbrite.com/e/632157168107/"
 
+[[redirects]]
+  from = "/mmcb"
+  to = "https://www.eventbrite.com/cc/mindful-marketplace-and-castle-bash-2308389"
+
 [[plugins]]
   package = "netlify-plugin-subfont"
 
