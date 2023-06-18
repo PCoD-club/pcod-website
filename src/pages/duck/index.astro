@@ -1,5 +1,10 @@
 ---
+// @ts-ignore
+import Duck from "../../markdown/duck.mdx";
+
 import BaseLayout from "@L/base.astro";
 ---
 
-<BaseLayout title="You found a duck!">DUCK</BaseLayout>
+<BaseLayout title="You found a duck!">
+    <Duck class="markdown" />
+</BaseLayout>

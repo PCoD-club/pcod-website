@@ -38,6 +38,18 @@
   from = "/mmcb"
   to = "https://www.eventbrite.com/cc/mindful-marketplace-and-castle-bash-2308389"
 
+[[redirects]]
+  from = "/narcan"
+  to = "https://nextdistro.org/resources-collection/narcan-training-video-next-distro"
+
+[[redirects]]
+  from = "/sa"
+  to = "https://givebutter.com/c/yt9VYO/auction"
+
+[[redirects]]
+  from = "/fent"
+  to = "https://dancesafe.org/wp-content/uploads/2022/11/fentanyl-test-strip-quick-reference-fall-2022-web.jpg"
+
 [[plugins]]
   package = "netlify-plugin-subfont"
 
