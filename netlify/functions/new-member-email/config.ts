@@ -6,7 +6,7 @@ const { sms_number, timezone } = config;
 export default {
   guildId: "928074679082692608",
   inviteChannel: "942841663301234699",
-  smtpServer: { host: "smtp.gmail.com", port: 587, secure: true },
+  smtpServer: { host: "smtp.gmail.com", port: 587, requireTLS: true },
   emailFromName: "Psychedelic Club of Denver",
   emailFromAddress: "info@pcodenver.com",
   emailSubject: "Psychedelic Club Discord",
