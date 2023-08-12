@@ -17,7 +17,7 @@ const gmail = nodemailer.createTransport({
   ...config.smtpServer,
   auth: {
     type: "OAUTH2",
-    user: config.emailFromAddress,
+    user: config.emailLogin,
     serviceClient: GOOGLE_SERVICE_ACCOUNT_CLIENTID,
     privateKey: GOOGLE_PRIVATE_KEY.replaceAll('\\n', '\n')
   },
@@ -49,7 +49,8 @@ async function createDiscordInvite(reqData: any) {
 
 function sendEmail(body: string, toAddr: string, subject: string = config.emailSubject) {
   return gmail.sendMail({
-    from: `"${config.emailFromName}" <${config.emailFromAddress}>`,
+    from: config.emailFrom,
+    replyTo: "",
     to: toAddr,
     subject: subject,
     html: body,
