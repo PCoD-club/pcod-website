@@ -14,6 +14,7 @@ const {
 } = process.env;
 
 const gmail = nodemailer.createTransport({
+  ...config.smtpServer,
   auth: {
     type: "OAUTH2",
     user: config.emailFromAddress,
