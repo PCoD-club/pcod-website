@@ -8,7 +8,7 @@ export default {
   inviteChannel: "942841663301234699",
   smtpServer: { host: "smtp.gmail.com", port: 587, requireTLS: true },
   emailFromName: "Psychedelic Club of Denver",
-  emailFromAddress: "info@pcodenver.com",
+  emailFromAddress: "amber@pcodenver.com",
   emailSubject: "Psychedelic Club Discord",
   inviteReason: (reqData: any) =>
     `New member automated invite (GivingFuel order # ${reqData?.orderNumber})`,
