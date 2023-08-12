@@ -7,8 +7,9 @@ export default {
   guildId: "928074679082692608",
   inviteChannel: "942841663301234699",
   smtpServer: { host: "smtp.gmail.com", port: 587, requireTLS: true },
-  emailLogin: "machine.elf@pcodenver.com",
-  emailFrom: "Psychedelic Club of Denver Membership <info@pcodenver.com>",
+  emailFrom: "machine.elf@pcodenver.com",
+  emailFromName: "Psychedelic Club of Denver Membership",
+  emailReplyTo: "Psychedelic Club of Denver <info@pcodenver.com>",
   emailSubject: "Psychedelic Club Discord",
   inviteReason: (reqData: any) =>
     `New member automated invite (GivingFuel order # ${reqData?.orderNumber})`,
