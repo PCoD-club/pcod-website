@@ -19,7 +19,7 @@ const gmail = nodemailer.createTransport({
     type: "OAUTH2",
     user: config.emailFromAddress,
     serviceClient: GOOGLE_SERVICE_ACCOUNT_CLIENTID,
-    privateKey: GOOGLE_PRIVATE_KEY
+    privateKey: GOOGLE_PRIVATE_KEY.replaceAll('\\n', '\n')
   },
 });
 
