@@ -6,8 +6,8 @@ const { sms_number, timezone } = config;
 export default {
   guildId: "928074679082692608",
   inviteChannel: "942841663301234699",
-  smtpServer: { host: "mail.privateemail.com", port: 587, secure: false },
-  emailFrom: "\"Psychedelic Club of Denver Membership\" <membership@pcodenver.com>",
+  emailFromName: "Psychedelic Club of Denver",
+  emailFromAddress: "info@pcodenver.com",
   emailSubject: "Psychedelic Club Discord",
   inviteReason: (reqData: any) =>
     `New member automated invite (GivingFuel order # ${reqData?.orderNumber})`,
@@ -40,7 +40,7 @@ export default {
     <br/><br/>
     <img src="https://pcodenver.com/assets/logo64.png" width="48px" height="48px" alt="Psychedelic Club of Denver Logo" />`,
   loopbackSubject: "New Member Notification",
-  loopbackTo: "\"Psychedelic Club of Denver\" <denverpsychedeliclub@gmail.com>",
+  loopbackTo: "\"Psychedelic Club of Denver\" <info@pcodenver.com>",
   loopbackContent: (reqData: any) =>
     endent`This is an automated email to notify you of a new Psychedelic Club member registration.
     <br/><br/>

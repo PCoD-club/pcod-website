@@ -9,21 +9,16 @@ import verify from "../webconnex";
 const {
   NEW_MEMBER_EMAIL_SECRET,
   DISCORD_TOKEN,
-  SMTP_EMAIL,
-  SMTP_PASSWORD,
-  SMTP_DKIM,
+  GOOGLE_SERVICE_ACCOUNT_CLIENTID,
+  GOOGLE_PRIVATE_KEY
 } = process.env;
 
-const smtp = nodemailer.createTransport({
-  ...config.smtpServer,
+const gmail = nodemailer.createTransport({
   auth: {
-    user: SMTP_EMAIL,
-    pass: SMTP_PASSWORD,
-  },
-  dkim: {
-    domainName: "pcodenver.com",
-    keySelector: "default",
-    privateKey: SMTP_DKIM
+    type: "OAUTH2",
+    user: config.emailFromAddress,
+    serviceClient: GOOGLE_SERVICE_ACCOUNT_CLIENTID,
+    privateKey: GOOGLE_PRIVATE_KEY
   },
 });
 
@@ -52,8 +47,8 @@ async function createDiscordInvite(reqData: any) {
 }
 
 function sendEmail(body: string, toAddr: string, subject: string = config.emailSubject) {
-  return smtp.sendMail({
-    from: config.emailFrom || `"Psychedelic Club of Denver" <${SMTP_EMAIL}>`,
+  return gmail.sendMail({
+    from: `"${config.emailFromName}" <${config.emailFromAddress}>`,
     to: toAddr,
     subject: subject,
     html: body,
