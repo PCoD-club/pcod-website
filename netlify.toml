@@ -7,44 +7,12 @@
   to = "sms://+17198810768"
 
 [[redirects]]
-  from = "/tix"
-  to = "https://www.eventbrite.com/e/632157168107/"
-
-[[redirects]]
-  from = "/tickets"
-  to = "https://www.eventbrite.com/e/632157168107/"
-
-[[redirects]]
-  from = "/vendor"
-  to = "https://forms.gle/UtwGaW4VLfTPrir49"
-
-[[redirects]]
-  from = "/vendors"
-  to = "/vendor"
-
-[[redirects]]
-  from = "/vend"
-  to = "/vendor"
-
-[[redirects]]
-  from = "/party"
-  to = "https://www.eventbrite.com/e/632157168107/"
-
-[[redirects]]
-  from = "/bash"
-  to = "https://www.eventbrite.com/e/632157168107/"
-
-[[redirects]]
-  from = "/mmcb"
-  to = "https://www.eventbrite.com/cc/mindful-marketplace-and-castle-bash-2308389"
+  from = "/comedy"
+  to = "https://www.eventbrite.com/e/718233785587/"
 
 [[redirects]]
   from = "/narcan"
   to = "https://nextdistro.org/resources-collection/narcan-training-video-next-distro"
-
-[[redirects]]
-  from = "/sa"
-  to = "https://givebutter.com/c/yt9VYO/auction"
 
 [[redirects]]
   from = "/fent"
