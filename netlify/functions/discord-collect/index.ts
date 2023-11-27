@@ -11,6 +11,8 @@ const {
 
 export const handler: Handler = async (event, context) => {
     if (event.headers["x-api-key"] != API_KEY) {
+        console.log("Invalid API Key");
+        console.log(event);
         return { statusCode: StatusCodes.UNAUTHORIZED, body: "Invalid API Key" };
     }
 
