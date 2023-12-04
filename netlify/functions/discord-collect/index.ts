@@ -28,13 +28,13 @@ export const handler: Handler = async (event, context) => {
 
     const payload = JSON.parse(event.body);
     const values = [payload.key, payload.value];
-    const row = await sheet.addRow(values);
+    // const row = await sheet.addRow(values);
     console.log("d");
 
     return {
         statusCode: StatusCodes.OK,
         body: JSON.stringify({
-            index: row.rowIndex,
+            index: 0,
             values: values
         }),
         headers: { "Content-Type": "application/json" }
