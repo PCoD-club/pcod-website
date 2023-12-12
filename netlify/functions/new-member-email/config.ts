@@ -30,15 +30,12 @@ export default {
     To get signed up, follow the unique invite link below. If you don't have a Discord account yet, the link will bring you through the account creation process. Feel free to set your username to whatever you want; we suggest using something recognizable like your name, but that's completely not required if you're uncomfortable sharing your identity. You can also change your nickname at any time by clicking on "Psychedelic Club of Denver" at the top of the channel list and selecting "Edit Server Profile".
     <br/><br/>
     Here's your unique invite link: <br/><b><a href="${inviteUrl}" style="color: #B300FF;">${inviteUrl}</a></b><br/>
-    If that invite link doesn't work or you need help getting in, reply to this email or send us a text at <a href="sms://${sms_number.replace(
-      /\D/g,
-      ""
-    )}" style="color: #B300FF;">${sms_number}</a>, and we'll help get you set up.
+    If that invite link doesn't work or you need help getting in, reply to this email and we'll help get you set up.
     <br/><br/>
     Once you're logged into the server, please read through the rules (they should be shown when you first join). Then feel free to introduce yourself in #introductions if you'd like and take a look around!<br/>
     We also have a master list of all our upcoming events in the 'Events' section at the top of the channel list. Included in that list should be a members-only social that we hold on the last Thursday of each month at 7PM at 700 Kalamath St; this is an awesome opportunity to get to know the members and to get more involved in the club. Thanks again for joining the Psychedelic Club of Denver, and we're so excited to get to know you!
     <br/><br/>
-    <i>- Kess, Katie, Amber, and Nate</i>
+    <i>- Katie, Amber, Nate, and Seth</i>
     <br/><br/>
     <img src="https://pcodenver.com/assets/logo64.png" width="48px" height="48px" alt="Psychedelic Club of Denver Logo" />`,
   loopbackSubject: "New Member Notification",
