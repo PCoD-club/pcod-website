@@ -22,6 +22,10 @@
   from = "/nye"
   to = "https://givebutter.com/tJ2Qki"
 
+[[redirects]]
+  from = "/grow"
+  to = "https://givebutter.com/7Ql0Xs"
+
 [[plugins]]
   package = "netlify-plugin-subfont"
 
