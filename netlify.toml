@@ -17,6 +17,14 @@
 [[redirects]]
   from = "/fent"
   to = "https://dancesafe.org/wp-content/uploads/2022/11/fentanyl-test-strip-quick-reference-fall-2022-web.jpg"
+  
+[[redirects]]
+  from = "/nye"
+  to = "https://givebutter.com/tJ2Qki"
+
+[[redirects]]
+  from = "/grow"
+  to = "https://givebutter.com/7Ql0Xs"
 
 [[plugins]]
   package = "netlify-plugin-subfont"
