@@ -8,6 +8,7 @@ const {
 } = process.env;
 
 function verifyWebconnexSignature(event: Event, secret: string): Response {
+    console.log(btoa(event.body));
     const hmac = createHmac("sha256", secret);
     hmac.update(event.body);
     const signature = hmac.digest("hex");
