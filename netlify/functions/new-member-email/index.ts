@@ -65,17 +65,17 @@ export const handler: Handler = async (event, context) => {
   }
 
   const reqData = payload.data;
-  const invite = await createDiscordInvite(reqData);
-  const emailBody = config.emailContent(reqData, invite);
+  // const invite = await createDiscordInvite(reqData);
+  // const emailBody = config.emailContent(reqData, invite);
 
-  const emailTo = `"${reqData.billing.name.first} ${reqData.billing.name.last}" <${reqData.billing.email}>`
-  const emailResp = await sendEmail(emailBody, emailTo);
-  if (emailResp.rejected.length > 0) {
-    return {
-      statusCode: StatusCodes.INTERNAL_SERVER_ERROR,
-      body: `Could not send email: ${emailResp}`,
-    };
-  }
+  // const emailTo = `"${reqData.billing.name.first} ${reqData.billing.name.last}" <${reqData.billing.email}>`
+  // const emailResp = await sendEmail(emailBody, emailTo);
+  // if (emailResp.rejected.length > 0) {
+  //   return {
+  //     statusCode: StatusCodes.INTERNAL_SERVER_ERROR,
+  //     body: `Could not send email: ${emailResp}`,
+  //   };
+  // }
 
   const loopbackBody = config.loopbackContent(reqData);
   const loopbackResp = await sendEmail(loopbackBody, config.loopbackTo, config.loopbackSubject);
@@ -88,10 +88,6 @@ export const handler: Handler = async (event, context) => {
 
   return {
     statusCode: StatusCodes.OK,
-    body: JSON.stringify({
-      invite,
-      emailBody,
-      emailResp,
-    }),
+    body: "",
   };
 };
